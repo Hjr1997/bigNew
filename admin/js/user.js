@@ -2,9 +2,6 @@ $(function () {
     $.ajax({
         type: 'get',
         url: BigNew.user_detail,
-        headers: {
-            'Authorization': localStorage.getItem('token')
-        },
         success: function (res) {
             console.log(res)
             if (res.code == 200) {
@@ -32,9 +29,6 @@ $(function () {
         $.ajax({
             type: 'post',
             url: BigNew.user_edit,
-            headers: {
-                'Authorization': localStorage.getItem('token')
-            },
             data: data,
             contentType: false,
             processData: false,
@@ -44,9 +38,6 @@ $(function () {
                     $.ajax({
                         type: 'get',
                         url: BigNew.user_detail,
-                        headers: {
-                            'Authorization': localStorage.getItem('token')
-                        },
                         success: function (res) {
                             if (res.code == 200) {
                                 parent.$('.sider .user_info span').html(`欢迎&nbsp;&nbsp;${res.data.nickname}`)

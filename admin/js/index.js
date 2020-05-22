@@ -20,17 +20,19 @@ $(function () {
         window.location.href = './login.html'
         window.localStorage.removeItem('token')
     })
-    $('.level01').on('click', function () {
+    $('.menu .level01').on('click', function () {
         $(this).addClass('active').siblings().removeClass('active')
         if ($(this).index() == 1) {
-            $('.level02').slideToggle()
-            $('.level02 li:eq(0)').trigger('click')
-            $(this).find("b").toggleClass("rotate0");
+            $('.menu .level02').slideToggle()
+
+            $(this).find("b").toggleClass("rotate0")
+            $('.menu .level02 li:eq(0)').trigger('click')
 
         }
-        $('.level02 li').on('click', function () {
-            $(this).addClass('active').siblings().removeClass('active')
-        })
+
+    })
+    $('.menu .level02 li').on('click', function () {
+        $(this).addClass('active').siblings().removeClass('active')
     })
 
 })
